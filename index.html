@@ -26,6 +26,12 @@
 </head>
 
 <body data-open="hover" data-menu="horizontal-menu" data-col="1-column" class="horizontal-layout 1-column pace-done vertical-layout vertical-overlay-menu fixed-navbar menu-open">
+<div class="loaders">
+    <div class="loading-ball">
+    <div class="ball"></div>
+    <div class="ball1"></div>
+    </div>
+</div>
 <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-static-top navbar-brand-center navbar-dark" data-nav="brand-center" style="min-height: 3rem !important;">
     <div class="navbar-wrapper">
         <div class="navbar-header">
@@ -84,7 +90,6 @@
         </div>
     </div>
 </nav>
-
 <div id="sticky-wrapper" class="sticky-wrapper"><div role="navigation" data-menu="menu-wrapper" class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-dark navbar-fixed navbar-without-dd-arrow navbar-shadow menu-border navbar-brand-center" data-nav="brand-center">
     <!-- Horizontal menu content-->
     <div data-menu="menu-container" class="navbar-container main-menu-content container center-layout">
@@ -162,7 +167,6 @@
     </div>
 
 </div>
-
 <div class="container center-layout mt-0">
     <div class="content-wrapper">
         <div class="content-body">
@@ -380,7 +384,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="footer-title"> Onze producten</div>
-                    <div class="match-outer" style="height: 357px;">
+                    <div class="">
                         <ul class="list-unstyled">
                             <li><i class="fa fa-angle-right mr-1 golden"></i><a href="http://megaparketstores.nl/outlet/vloeren/overzicht-klik-pvc-vloeren-outlet/">Overzicht klik PVC vloeren outlet</a></li>
                             <li><i class="fa fa-angle-right mr-1 golden"></i><a href="http://megaparketstores.nl/outlet/vloeren/overzicht-eiken-vloeren-outlet/">Overzicht eiken vloeren outlet</a></li>
@@ -393,7 +397,7 @@
                 </div>
             </div>
             <hr class="">
-            <ul class="d-inline-flex list-unstyled">
+            <ul class="d-block d-md-inline-flex list-unstyled">
                 <li><a class="mr-1" href="">Amsterdam</a></li>
                 <li><a class="mr-1" href="">Den Haag</a></li>
                 <li><a class="mr-1" href="">Rotterdam</a></li>
@@ -436,6 +440,9 @@
 
 <script>
     $(document).ready(function(){
+
+        $(".loaders").delay(3000).fadeOut("slow");
+
         var sync1 = $("#sync1");
         var sync2 = $("#sync2");
         var sync3 = $("#sync3");
