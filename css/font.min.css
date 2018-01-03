@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('../fonts/SourceSansPro/SourceSansPro-Regular.eot');
+  src: url('../fonts/SourceSansPro/SourceSansPro-Regular.woff2') format('woff2'),
+       url('../fonts/SourceSansPro/SourceSansPro-Regular.woff') format('woff'),
+       url('../fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype'),
+       url('../fonts/SourceSansPro/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg'),
+       url('../fonts/SourceSansPro/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
