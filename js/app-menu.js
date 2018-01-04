@@ -1,13 +1,4 @@
-/*=========================================================================================
-  File Name: app-menu.js
-  Description: Menu navigation, custom scrollbar, hover scroll bar, multilevel menu
-  initialization and manipulations
-  ----------------------------------------------------------------------------------------
-  Item Name: Stack - Responsive Admin Theme
-  Version: 2.1
-  Author: Pixinvent
-  Author URL: hhttp://www.themeforest.net/user/pixinvent
-==========================================================================================*/
+
 (function(window, document, $) {
   'use strict';
 
@@ -251,80 +242,9 @@
           }
         }
       }
-
-      /********************************************
-      *             Searchable Menu               *
-      ********************************************/
-
-      function searchMenu(list) {
-
-        var input = $(".menu-search");
-        $(input)
-          .change( function () {
-            var filter = $(this).val();
-            if(filter) {
-              // Hide Main Navigation Headers
-              $('.navigation-header').hide();
-              // this finds all links in a list that contain the input,
-              // and hide the ones not containing the input while showing the ones that do
-              $(list).find("li a:not(:Contains(" + filter + "))").hide().parent().hide();
-              // $(list).find("li a:Contains(" + filter + ")").show().parents('li').show().addClass('open').closest('li').children('a').show();
-              var searchFilter = $(list).find("li a:Contains(" + filter + ")");
-              if( searchFilter.parent().hasClass('has-sub') ){
-                searchFilter.show()
-                .parents('li').show()
-                .addClass('open')
-                .closest('li')
-                .children('a').show()
-                .children('li').show();
-
-                // searchFilter.parents('li').find('li').show().children('a').show();
-                if(searchFilter.siblings('ul').length > 0){
-                  searchFilter.siblings('ul').children('li').show().children('a').show();
-                }
-
-              }
-              else{
-                searchFilter.show().parents('li').show().addClass('open').closest('li').children('a').show();
-              }
-            } else {
-              // return to default
-              $('.navigation-header').show();
-              $(list).find("li a").show().parent().show().removeClass('open');
-            }
-            $.app.menu.manualScroller.update();
-            return false;
-          })
-        .keyup( function () {
-            // fire the above change event after every letter
-            $(this).change();
-        });
-      }
-
-      if(menuType === 'vertical-menu' || menuType === 'vertical-overlay-menu'){
-        // custom css expression for a case-insensitive contains()
-        jQuery.expr[':'].Contains = function(a,i,m){
-            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-        };
-
-        searchMenu($("#main-menu-navigation"));
-      }
+      
     },
-
-    /*changeLogo: function(menuType){
-      var logo = $('.brand-logo');
-      var logoText = $('.brand-text');
-      if(menuType == 'expand'){
-        // logo.attr('src',logo.data('expand'));
-        logoText.delay(100).fadeIn(200);
-        // logoText.addClass('d-inline-block').removeClass('d-none');
-      }
-      else{
-        // logo.attr('src',logo.data('collapse'));
-        logoText.fadeOut(100);
-        // logoText.addClass('d-none').removeClass('d-inline-block');
-      }
-    },*/
+    
 
     transit: function(callback1, callback2) {
       var menuObj = this;
